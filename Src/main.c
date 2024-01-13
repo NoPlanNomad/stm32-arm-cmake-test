@@ -125,6 +125,12 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLN = 192;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
+
+
+  //
+  // THIS FUNCTION FAILS BECAUSE PLL IS ALREADY USED
+  //
+
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
